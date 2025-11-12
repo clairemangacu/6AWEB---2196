@@ -1,0 +1,257 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #D6CDA4;  /* Soft Khaki Background */
+  color: #4F3B31; /* Charcoal Brown Text */
+}
+
+/* Container */
+.cv-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px;
+  background: #FFF8F0;  /* Warm White Background for the Content */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Header Section */
+.cv-header {
+ margin-bottom:40px;
+ text-align: center;
+
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.profile-picture {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;  /* Circular Image */
+  object-fit: cover;   /* Ensure the image fits properly inside the circle */
+  border: 3px solid #C49A6C;  /* Light Brown border around the image */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}
+
+
+.profile-info {
+  display: flex;
+ /* Stack the elements vertically */
+  align-items: center;     /* Center the content horizontally */
+  text-align: center;      /* Ensure the text is centered */
+}
+
+.name {
+ font-size:2.8rem;
+ font-weight:800;
+text-align:center;
+
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;  /* Space out the contact items */
+  flex-wrap: wrap;          /* Wrap items to the next line if needed */
+  margin-top: 10px;
+}
+
+.contact-item {
+  font-size: 16px;
+  margin: 5px 10px;
+}
+
+.separator {
+  margin: 0 5px;
+}
+
+.contact-item i {
+  margin-right: 5px;  /* Add some space between icon and text */
+}
+
+a {
+  color: #4F3B31;  /* Dark brown for email link */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  border-top: 2px solid #C49A6C;  /* Light Brown Divider */
+  margin-top: 20px;
+  margin-bottom: 30px;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.divider:hover {
+  transform: scaleX(1.1);
+}
+
+/* Section Titles */
+.section-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #C49A6C;  /* Light Brown for Titles */
+  border-bottom: 2px solid #C49A6C;  /* Light Brown Border */
+  padding-bottom: 12px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #C49A6C;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.section-title:hover::after {
+  transform: scaleX(1);
+}
+
+/* Profile Section */
+.profile-text {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #4F3B31;
+  background-color: #F2E8D5;  /* Soft Beige Background */
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.profile-text:hover {
+  transform: translateY(-5px); /* Slight raise on hover */
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: flex;
+  gap: 60px;
+  transition: all 0.3s ease;
+}
+
+.skills-column {
+  flex: 1;
+}
+
+.skills-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.skills-list li {
+  font-size: 16px;
+  margin-bottom: 14px;
+  color: #4F3B31;
+  transition: color 0.3s ease;
+}
+
+.skills-list li:hover {
+  color: #C49A6C; /* Light Brown hover color */
+}
+
+.skills-list li i {
+  margin-right: 10px;
+  color: #C49A6C;  /* Light Brown for Icons */
+}
+
+/* Technical Skills Section */
+.technical-skills {
+  margin-top: 50px;
+}
+
+.tech-categories {
+  display: flex;
+  gap: 60px;
+}
+
+.tech-category {
+  background-color: #C49A6C;  /* Light Brown Background */
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.tech-category:hover {
+  transform: scale(1.05); /* Slight enlarge effect */
+}
+
+.tech-category h3 {
+  font-size: 20px;
+  color: #FFF8F0;  /* Warm White Text */
+}
+
+.tech-items {
+  font-size: 16px;
+  color: #4F3B31;
+}
+
+/* Education Section */
+.education-item {
+  background-color: #F2E8D5;  /* Warm White Background */
+  padding: 18px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.degree, .institution, .duration {
+  margin: 5px 0;
+}
+
+.degree {
+  font-weight: bold;
+  color: #C49A6C;  /* Light Brown Degree Color */
+}
+
+.institution, .duration {
+  color: #4F3B31;
+}
+
+/* Interactive Links & Buttons */
+a, button {
+  text-decoration: none;
+  font-weight: 500;
+  color: #C49A6C;
+  transition: color 0.3s ease;
+}
+
+a:hover, button:hover {
+  color: #4F3B31; /* Dark Brown hover effect */
+  text-decoration: underline;
+}
+
+/* Responsive Design: Ensure mobile responsiveness */
+@media (max-width: 768px) {
+  .skills-grid {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .tech-categories {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+  }
+}
