@@ -1,0 +1,90 @@
+/* Header Section */
+.cv-header {
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 30px 20px;
+  background-color: #FFF8F0; /* Light warm background */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px #4F3B31;;
+}
+
+/* Profile Section */
+.profile-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Name Styling */
+.name {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #C49A6C;
+  margin: 0;
+  line-height: 1.2;
+}
+
+/* Contact Info Styling */
+.contact-info {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  font-size: 16px;
+  color: #4F3B31;
+}
+
+.contact-item i {
+  color: #C49A6C;
+  margin-right: 6px;
+}
+
+.contact-item a {
+  color: #4F3B31;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-item a:hover {
+  color: #C49A6C;
+  text-decoration: underline;
+}
+
+/* Separator Styling */
+.separator {
+  opacity: 0.5;
+  margin: 0 8px;
+}
+
+/* Divider Line */
+.divider {
+  border-top: 2px solid #C49A6C;
+  margin-top: 25px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  transition: transform 0.3s ease;
+}
+
+.divider:hover {
+  transform: scaleX(1.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .name {
+    font-size: 2.2rem;
+  }
+
+  .contact-info {
+    font-size: 14px;
+    gap: 10px;
+  }
+
+  .divider {
+    width: 90%;
+  }
+}
