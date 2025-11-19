@@ -1,0 +1,75 @@
+    .experience-section {
+    margin-bottom: 50px;
+    width: 100%;
+    }
+
+    /* Section Title */
+    .section-title {
+    font-size: 26px;
+    color: #C49A6C;
+    border-bottom: 2px solid #C49A6C;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    }
+
+    /* Two-column layout */
+    .experience-grid {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the columns */
+    }
+
+    /* Columns */
+    .experience-column,
+    .certification-column {
+    flex: 1;
+    min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    }
+
+    /* Experience / Certification Items */
+    .experience-item {
+    background: #F2E8D5; /* Same soft beige for both columns */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    }
+
+    .experience-item:hover {
+    transform: translateY(-3px);
+    }
+
+    /* Job Titles */
+    .job-title {
+    font-weight: bold;
+    color: #C49A6C;
+    margin-bottom: 8px;
+    font-size: 20px;
+    }
+
+    /* Company / Duration */
+    .company {
+    color: #4F3B31;
+    margin-bottom: 12px;
+    font-size: 16px;
+    }
+
+    /* List Items */
+    .details li {
+    color: #4F3B31;
+    margin-bottom: 6px;
+    line-height: 1.5;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+    .experience-grid {
+        flex-direction: column;
+        gap: 25px;
+    }
+    }

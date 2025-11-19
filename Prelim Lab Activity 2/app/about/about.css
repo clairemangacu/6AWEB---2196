@@ -1,0 +1,95 @@
+    .about-section {
+    width: 100%;
+    padding: 20px 50px;
+    background-color: #FFF8F0;
+    box-sizing: border-box;
+    }
+
+    /* Section Title */
+    .section-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: #C49A6C;
+    text-align: center;
+    margin-bottom: 10px;
+    }
+
+    /* Full-width Profile */
+    .profile-full {
+    margin-bottom: 50px;
+    }
+
+    .profile-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #C49A6C;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #C49A6C;
+    display: inline-block;
+    }
+
+    .about-box {
+    background-color: #F2E8D5;
+    padding: 25px 30px;
+    border-radius: 12px;
+    color: #4F3B31;
+    line-height: 1.7;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
+    }
+
+    /* Education Grid */
+    .education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    }
+
+    .education-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #C49A6C;
+    margin-bottom: 200px;
+    border-bottom: 2px solid #C49A6C;
+
+    display: inline-block;
+    }
+
+    /* Education Card */
+    .education-card {
+    background-color: #FFF8F0;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #C49A6C;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+
+
+    .degree {
+    font-size: 18px;
+    font-weight: bold;
+    color: #C49A6C;
+    margin-bottom: 4px;
+    }
+
+    .institution,
+    .duration {
+    font-size: 15px;
+    color: #4F3B31;
+    margin: 2px 0;
+    }
+
+    .achievements {
+    list-style-type: disc;
+    margin: 5px 0 0 20px;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+    }
