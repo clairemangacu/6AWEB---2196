@@ -1,0 +1,38 @@
+/* Center main container */
+.db-container {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+/* Card style for each section */
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Headings */
+.card h2 {
+  margin-bottom: 15px;
+}
+
+/* Passing / Failing styles */
+.passing {
+  color: green;
+  font-weight: bold;
+}
+.failing {
+  color: red;
+  font-weight: bold;
+}
+
+/* Style binding box */
+.box {
+  margin: 0 auto;
+  border-radius: 8px;
+  border: 2px solid #ddd;
+}
