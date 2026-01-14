@@ -1,0 +1,97 @@
+/* Global styles with solid light pink background */
+:host {
+  display: block;
+  font-family: 'Roboto', Arial, sans-serif;
+  background-color: #fce4ec; /* Solid light pink background */
+  padding: 20px;
+  min-height: 100vh;
+  animation: fadeIn 1s ease-in-out; /* Fade-in effect on load */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Main heading */
+h1 {
+  text-align: center;
+  color: #ad1457; /* Darker pink for contrast on light background */
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  font-weight: 300;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+/* Container for all pipe sections */
+.pipes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Each pipe section as a card with unique effects */
+.pipe-section {
+  background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white for overlay */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 2px solid transparent; /* For glowing effect */
+  text-align: center; /* Center all text inside */
+}
+
+.pipe-section:hover {
+  transform: translateY(-5px) rotate(1deg); /* Lift and slight tilt */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  border-color: #fce4ec; /* Light pink glow on hover */
+}
+
+/* Section headings */
+.pipe-section h2 {
+  color: #ad1457; /* Darker pink for headings */
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border-bottom: 2px solid #fce4ec; /* Light pink accent */
+  padding-bottom: 5px;
+  text-align: center; /* Explicit center */
+}
+
+/* Paragraphs */
+.pipe-section p {
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  text-align: center; /* Center text */
+}
+
+/* Specific styling for pipe outputs */
+.pipe-section p:last-child {
+  font-weight: bold;
+  color: #ad1457; /* Darker pink for output text */
+  background-color: #fce4ec; /* Light pink background */
+  padding: 10px;
+  border-radius: 8px;
+  font-family: 'Courier New', monospace;
+  text-align: center; /* Center output text */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1); /* Inner shadow for depth */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pipes-container {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .pipe-section {
+    padding: 15px;
+  }
+}

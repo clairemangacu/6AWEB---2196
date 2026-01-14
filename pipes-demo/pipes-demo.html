@@ -1,0 +1,70 @@
+<h1>Angular Pipes Showcase</h1>
+<div class="pipes-container">
+  <!-- 1. Date Pipes -->
+  <div class="pipe-section">
+    <h2>Date Pipes 📅</h2>
+    <p>Elegant Date Formatter: Seamlessly transforms date objects into readable formats, from concise to elaborate, with optional uppercase enhancement.</p>
+    <p>Current date (raw): {{ presentDate }}</p>
+    <p>Current date (formatted): {{ presentDate | date }}</p>
+    <p>Current date (full): {{ presentDate | date:'full' }}</p>
+    <p>Current date (chained uppercase): {{ presentDate | date:'fullDate' | uppercase }}</p>
+  </div>
+
+  <!-- 2. Async Pipes -->
+  <div class="pipe-section">
+    <h2>Async Pipes ⏰</h2>
+    <p>Reactive Stream Specialist: Automatically subscribes to observables, delivering real-time data like a live clock, with effortless formatting.</p>
+    <p>Seconds changing in Time: {{ time$ | async | date:'mediumTime' }}</p>
+  </div>
+
+  <!-- 3. Slice Pipes -->
+  <div class="pipe-section">
+    <h2>Slice Pipes ✂️</h2>
+    <p>Array Precision Tool: Expertly extracts array segments by index, supporting flexible ranges for tailored data views.</p>
+    <p>Full array: {{ numbers }}</p>
+    <p>Sliced (start at 2): {{ numbers | slice:2 }}</p>
+    <p>Sliced (range 2-5): {{ numbers | slice:2:5 }}</p>
+  </div>
+
+  <!-- 4. Currency Pipes (Original) -->
+  <div class="pipe-section">
+    <h2>Currency Pipes 💰</h2>
+    <p>Global Finance Formatter: Converts numbers to currency standards, incorporating codes and symbols for international appeal.</p>
+    <p>Price (USD): {{ price | currency:'USD' }}</p>
+    <p>Price (EUR): {{ price | currency:'EUR' }}</p>
+    <p>Price (INR, symbol): {{ price | currency:'INR':'symbol' }}</p>
+  </div>
+
+  <!-- 5. Decimal Pipes -->
+  <div class="pipe-section">
+    <h2>Decimal Pipes 🔢</h2>
+    <p>Numerical Refinement Expert: Applies precise decimal formatting with customizable rules, ideal for mathematical and financial precision.</p>
+    <p>Decimal value: {{ decimalValue | number }}</p>
+    <p>Decimal (2.2-2): {{ decimalValue | number:'2.2-2' }}</p>
+    <p>Decimal (1.0-3): {{ decimalValue | number:'1.0-3' }}</p>
+  </div>
+
+  <!-- 6. Currency Pipes (Variant) -->
+  <div class="pipe-section">
+    <h2>Currency Pipes (Variant) 💵</h2>
+    <p>Advanced Currency Specialist: Delivers tailored currency displays with digit controls, perfect for detailed pricing strategies.</p>
+    <p>Price (JPY, code): {{ price2 | currency:'JPY':'code' }}</p>
+    <p>Price (GBP, symbol, 2.2-2): {{ price2 | currency:'GBP':'symbol':'2.2-2' }}</p>
+  </div>
+
+  <!-- 7. TitleCase Pipes -->
+  <div class="pipe-section">
+    <h2>TitleCase Pipes 🏷️</h2>
+    <p>Title Transformation Pro: Capitalizes word beginnings for polished titles and names, ensuring professional presentation.</p>
+    <p>Original text: {{ text }}</p>
+    <p>TitleCase: {{ text | titlecase }}</p>
+  </div>
+
+  <!-- 8. Percent Pipes -->
+  <div class="pipe-section">
+    <h2>Percent Pipes 📊</h2>
+    <p>Percentage Conversion Master: Transforms decimals into percentages, essential for statistics and progress tracking.</p>
+    <p>Percentage: {{ percentage | percent }}</p>
+    <p>Percentage (2.2-2): {{ percentage | percent:'2.2-2' }}</p>
+  </div>
+</div>
