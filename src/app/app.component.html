@@ -1,0 +1,57 @@
+<div class="page">
+
+  <!-- EMPLOYEES -->
+  <section class="card">
+    <h2>Employees</h2>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let employee of employees; trackBy: trackById">
+            <td>{{ employee.id }}</td>
+            <td>{{ employee.firstname }}</td>
+            <td>{{ employee.lastname }}</td>
+            <td>{{ employee.email }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="card">
+    <h2>Products</h2>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Product Name</th>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let product of products; trackBy: trackById">
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.desc }}</td>
+            <td>₱{{ product.price }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</div>
