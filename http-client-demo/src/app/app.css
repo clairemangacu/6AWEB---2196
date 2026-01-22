@@ -1,0 +1,72 @@
+.container {
+    padding: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Soft cream background */
+    background-color: #fdfaf5;
+    min-height: 100vh;
+}
+
+h2 {
+    /* Deep espresso brown */
+    color: #3e2723;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    /* Warm shadow to match the theme */
+    box-shadow: 0 10px 30px rgba(62, 39, 35, 0.1); 
+    border: 1px solid #d7ccc8;
+}
+
+th {
+    /* Gradient from medium brown to dark chocolate */
+    background: linear-gradient(135deg, #8d6e63, #4e342e);
+    color: #ffffff;
+    padding: 18px;
+    text-align: left;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #efebe9;
+    color: #5d4037; /* Warm dark brown text */
+    font-size: 0.95rem;
+}
+
+/* Zebra Striping */
+tr:nth-child(even) {
+    /* Very light tan/almond */
+    background-color: #faf7f2;
+}
+
+/* Hover effect */
+tr:hover {
+    background-color: #f5ece0;
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* ID Column Specific Styling (Matches your blue screenshot style) */
+td:first-child {
+    font-weight: bold;
+    color: #795548; /* Medium accent brown */
+    text-align: center;
+}
+
+/* Removes the bottom border from the last row to keep the rounded corners clean */
+tr:last-child td {
+    border-bottom: none;
+}
