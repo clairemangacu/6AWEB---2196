@@ -1,0 +1,83 @@
+.contact-form {
+  max-width: 500px;
+  background: var(--slate-gray);
+  padding: 40px;
+  border-radius: 30px;
+  color: white;
+}
+
+.contact-form input, .contact-form textarea {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.contact-form input::placeholder {
+  color: #a4b0be;
+}
+
+.preview-box {
+  background: var(--primary-purple);
+  color: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-top: 20px;
+  font-style: italic;
+}
+
+.about-card, .contact-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; /* Centers text inside the cards */
+}
+
+.form-group {
+  text-align: left; /* Keeps labels aligned with inputs while the box is centered */
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto 15px auto;
+}
+
+.form-container {
+  background: var(--slate-gray);
+  color: white;
+  padding: 40px;
+  border-radius: 30px;
+  margin: 20px;
+}
+
+.catchy-preview {
+  margin-top: 20px;
+  border: 2px dashed var(--accent-purple);
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.name-display {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent-purple);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.form-input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+}
+
+.preview-box {
+  background: #eee;
+  padding: 15px;
+  border-radius: 4px;
+  min-height: 150px;
+}

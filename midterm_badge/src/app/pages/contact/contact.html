@@ -1,0 +1,19 @@
+<div class="content-container">
+  <div class="contact-grid">
+    <div class="form-section">
+      <h3>Contact Us</h3>
+      <input [(ngModel)]="name" placeholder="Name *" class="form-input" />
+      <input [(ngModel)]="email" placeholder="Email *" class="form-input" />
+      <textarea [(ngModel)]="message" placeholder="Message" class="form-input"></textarea>
+    </div>
+
+    <div class="preview-section">
+      <h3>Form Preview</h3>
+      <div class="preview-box">
+        <p><strong>Name:</strong> {{ name | uppercase }}</p>
+        <p><strong>Email:</strong> {{ email }}</p>
+        <p><strong>Message:</strong> {{ message }}</p>
+      </div>
+    </div>
+  </div>
+</div>

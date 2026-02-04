@@ -1,0 +1,99 @@
+/* Search Bar Design */
+input[type="text"] {
+  width: 100%;
+  border: 2px solid var(--primary-purple);
+  background: var(--glass);
+  padding: 15px;
+  border-radius: 50px; /* Pill shape */
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(108, 92, 231, 0.2);
+}
+
+input[type="text"]:focus {
+  box-shadow: 0 4px 25px rgba(108, 92, 231, 0.4);
+  transform: scale(1.01);
+}
+
+/* Service Cards */
+.service-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.service-card {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  border-bottom: 5px solid var(--slate-gray);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  border-bottom: 5px solid var(--primary-purple);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.service-card h4 {
+  color: var(--primary-purple);
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.service-container, .service-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the list items */
+  width: 100%;
+}
+
+.service-card, .service-list li {
+  width: 100%;
+  max-width: 600px; /* Limits width so it looks like a centered card */
+  margin: 10px auto;
+  text-align: center;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  max-width: 1200px;
+}
+
+.glass-card {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  padding: 25px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: 0 8px 32px rgba(142, 68, 173, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary-purple);
+}
+
+.search-bar {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.service-item {
+  background: #ff04ea;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}

@@ -1,0 +1,44 @@
+:root {
+  --primary-purple: #8e44ad; /* Catchy Deep Purple */
+  --accent-purple: #a29bfe;  /* Light Purple for glows */
+  --slate-gray: #2d3436;     /* Professional Gray */
+  --light-gray: #f5f6fa;
+  --glass: rgba(255, 255, 255, 0.85);
+}
+
+body {
+  background: linear-gradient(135deg, #f5f6fa 0%, #dcdde1 100%);
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  color: var(--slate-gray);
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers all page content */
+  text-align: center;
+}
+
+h2 {
+  color: var(--primary-purple);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-top: 30px;
+}
+
+/* This ensures every page is centered and clean */
+.content-container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Standard catchy card for your info */
+.glass-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-left: 8px solid #6c5ce7; /* Purple accent */
+  margin-top: 20px;
+}

@@ -1,0 +1,14 @@
+<div class="content-container">
+  <h2><i class="icon">🏠</i> Welcome!</h2>
+  <p>This portal pulls remote records and shares them across pages.</p>
+
+  <div class="card">
+    <h3>Latest Updates</h3>
+    <ul class="update-list">
+      <li *ngFor="let item of (services$ | async | slice:0:2)">
+        <strong>{{ item.title | uppercase }}</strong>
+        <p>{{ item.body }}</p>
+      </li>
+    </ul>
+  </div>
+</div>

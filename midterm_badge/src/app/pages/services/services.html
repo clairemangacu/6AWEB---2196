@@ -1,0 +1,11 @@
+<div class="content-container">
+  <h2><i class="icon">📋</i> Services</h2>
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Search by title or body..." class="search-bar">
+
+  <div class="service-list">
+    <div class="service-item" *ngFor="let item of (services$ | async)">
+      <h4>{{ item.title | uppercase }}</h4>
+      <p>{{ item.body }}</p>
+    </div>
+  </div>
+</div>
