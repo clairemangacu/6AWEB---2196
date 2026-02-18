@@ -1,0 +1,28 @@
+/* Inherit the base glassmorphism styles you already have */
+@import '../template-demo/template-demo.css';
+
+/* Custom adjustments for this specific demo */
+.error-text {
+  color: #ff7675;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+  font-style: italic;
+}
+
+/* Ensure the textarea matches the existing input style */
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  background: rgba(255, 255, 255, 0.8);
+  font-family: inherit;
+  resize: none;
+  outline: none;
+}
+
+textarea:focus {
+  border-color: #E0C3FC;
+  box-shadow: 0 0 8px rgba(224, 195, 252, 0.4);
+}

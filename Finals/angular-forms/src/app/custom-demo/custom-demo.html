@@ -1,0 +1,42 @@
+<div class="glass-container">
+  <div class="form-card">
+    <h3>Custom Mission Log</h3>
+
+    <form [formGroup]="customForm" (ngSubmit)="onSubmit()">
+      <div class="input-group">
+        <label>Explorer Codename</label>
+        <input type="text" formControlName="codename" placeholder="Enter unique name">
+        <small *ngIf="customForm.get('codename')?.errors?.['forbiddenName']" class="error-text">
+          This name is restricted by the Intergalactic Council.
+        </small>
+      </div>
+
+      <div class="input-group">
+        <label>Destination Planet</label>
+        <select formControlName="planet">
+          <option value="">-- Select Destination --</option>
+          <option value="Mars">Mars</option>
+          <option value="Jupiter">Jupiter</option>
+          <option value="Saturn">Saturn</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>Mission Type</label>
+        <div class="radio-group">
+          <label><input type="radio" value="Discovery" formControlName="missionType"> Discovery</label>
+          <label><input type="radio" value="Research" formControlName="missionType"> Research</label>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>Special Instructions</label>
+        <textarea formControlName="notes" rows="3" placeholder="Additional notes..."></textarea>
+      </div>
+
+      <button type="submit" class="pastel-btn" [disabled]="customForm.invalid">
+        Initiate Launch
+      </button>
+    </form>
+  </div>
+</div>

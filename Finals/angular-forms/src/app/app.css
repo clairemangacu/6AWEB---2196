@@ -1,0 +1,80 @@
+/* General Reset for the Body */
+body {
+  margin: 0;
+  padding: 0;
+  background: #fdfcfb;
+}
+
+/* 1. The Glass Header Wrapper */
+.glass-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(15px); /* This creates the glass effect */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.5rem 0;
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+/* 2. Logo / Brand Styling */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: #444;
+}
+
+.logo-icon {
+  font-size: 1.8rem;
+}
+
+.highlight {
+  background: linear-gradient(90deg, #8EC5FC, #E0C3FC);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 3. Navigation Link Styling */
+.nav-links {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #777;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.8rem 1.2rem;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-links a:hover {
+  color: #444;
+  background: rgba(142, 197, 252, 0.1);
+}
+
+/* 4. The Active State (Current Page) */
+.nav-links a.active {
+  background: linear-gradient(90deg, #8EC5FC, #E0C3FC);
+  color: white;
+  box-shadow: 0 4px 15px rgba(224, 195, 252, 0.4);
+}
+
+/* Space for the content below the fixed header */
+.content-area {
+  padding-top: 20px;
+}

@@ -1,0 +1,46 @@
+<div class="glass-container">
+  <div class="form-card">
+    <h3>Reactive Registration</h3>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <div class="input-group">
+        <label>Username</label>
+        <input type="text" formControlName="username" placeholder="Username">
+        <small *ngIf="isInvalid('username')" class="error">4-12 characters required</small>
+      </div>
+
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" formControlName="email" placeholder="Email">
+        <small *ngIf="isInvalid('email')" class="error">Enter a valid email</small>
+      </div>
+
+      <div class="input-group">
+        <label>Role</label>
+        <select formControlName="role">
+          <option *ngFor="let r of roles" [value]="r">{{ r }}</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>Gender</label>
+        <div class="radio-group">
+          <label><input type="radio" value="Male" formControlName="gender"> Male</label>
+          <label><input type="radio" value="Female" formControlName="gender"> Female</label>
+        </div>
+      </div>
+
+      <div class="input-group">
+  <label>Comments (Notes)</label>
+  <textarea
+    formControlName="comments"
+    rows="3"
+    placeholder="Enter your notes here...">
+  </textarea>
+</div>
+
+
+      <button type="submit" class="pastel-btn" [disabled]="form.invalid">Submit</button>
+    </form>
+  </div>
+</div>
