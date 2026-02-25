@@ -1,0 +1,169 @@
+    <mat-toolbar color="primary" style="background: linear-gradient(135deg, #667eea, #764ba2); box-shadow: 0 4px 20px rgba(102,126,234,0.4);">
+    <mat-icon style="margin-right: 10px;">auto_awesome</mat-icon>
+    <span style="font-family: 'Poppins', sans-serif; font-weight: 600; letter-spacing: 1px;">Angular Material Demo</span>
+    <span style="flex: 1;"></span>
+    <mat-icon matTooltip="Version 1.0">info</mat-icon>
+    </mat-toolbar>
+
+    <mat-card class="register-card">
+
+    <!-- Gradient Header -->
+    <div class="card-header-banner">
+        <div class="header-icon-circle">
+        <mat-icon>person_add</mat-icon>
+        </div>
+        <h2>Create Account</h2>
+        <p>Join us today! Fill in your details below</p>
+    </div>
+
+    <div class="form-content">
+        <form [formGroup]="registerForm" (ngSubmit)="onClickSubmit()">
+
+        <!-- Username -->
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Username</mat-label>
+            <input matInput formControlName="username" placeholder="Enter your username">
+            <mat-icon matSuffix style="color: #667eea;">person</mat-icon>
+            @if (registerForm.get('username')?.hasError('required') &&
+                registerForm.get('username')?.touched) {
+            <mat-error>Username is required</mat-error>
+            }
+            @if (registerForm.get('username')?.hasError('minlength') &&
+                registerForm.get('username')?.touched) {
+            <mat-error>Username must be at least 3 characters</mat-error>
+            }
+        </mat-form-field>
+
+        <!-- Email -->
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Email Address</mat-label>
+            <input matInput formControlName="email" placeholder="Enter your email">
+            <mat-icon matSuffix style="color: #667eea;">email</mat-icon>
+            @if (registerForm.get('email')?.hasError('required') &&
+                registerForm.get('email')?.touched) {
+            <mat-error>Email is required</mat-error>
+            }
+            @if (registerForm.get('email')?.hasError('email') &&
+                registerForm.get('email')?.touched) {
+            <mat-error>Must be a valid email address</mat-error>
+            }
+        </mat-form-field>
+
+        <!-- Password -->
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" formControlName="password"
+                placeholder="Min. 8 characters">
+            <mat-icon matSuffix style="color: #667eea;">lock</mat-icon>
+            @if (registerForm.get('password')?.hasError('required') &&
+                registerForm.get('password')?.touched) {
+            <mat-error>Password is required</mat-error>
+            }
+            @if (registerForm.get('password')?.hasError('minlength') &&
+                registerForm.get('password')?.touched) {
+            <mat-error>Password must be at least 8 characters</mat-error>
+            }
+        </mat-form-field>
+
+        <!-- Gender -->
+        <div class="form-section">
+            <label class="section-label">Gender</label>
+            <mat-radio-group formControlName="gender" class="radio-group">
+            <label class="gender-option">
+                <mat-radio-button value="male">Male</mat-radio-button>
+            </label>
+            <label class="gender-option">
+                <mat-radio-button value="female">Female</mat-radio-button>
+            </label>
+            <label class="gender-option">
+                <mat-radio-button value="other">Other</mat-radio-button>
+            </label>
+            </mat-radio-group>
+            @if (registerForm.get('gender')?.hasError('required') && submitted) {
+            <span class="error-text">Please select a gender</span>
+            }
+        </div>
+
+        <!-- Birth Date -->
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Birth Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="birthDate">
+            <mat-datepicker-toggle matSuffix [for]="picker">
+            <mat-icon matDatepickerToggleIcon style="color: #667eea;">calendar_today</mat-icon>
+            </mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+            @if (registerForm.get('birthDate')?.hasError('required') &&
+                registerForm.get('birthDate')?.touched) {
+            <mat-error>Birth date is required</mat-error>
+            }
+        </mat-form-field>
+
+        <!-- Address -->
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Address</mat-label>
+            <textarea matInput formControlName="address"
+                    placeholder="Enter your full address" rows="3">
+            </textarea>
+            <mat-icon matSuffix style="color: #667eea;">home</mat-icon>
+        </mat-form-field>
+
+        <!-- Skill Level Slider -->
+        <div class="form-section">
+            <div class="skill-display">
+            <label class="section-label">Angular Skill Level</label>
+            <span class="skill-badge">
+                {{ registerForm.get('angularSkillLevel')?.value }} / 10
+            </span>
+            </div>
+            <mat-slider min="1" max="10" step="1" class="full-width"
+            style="color: #667eea;">
+            <input matSliderThumb formControlName="angularSkillLevel">
+            </mat-slider>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="form-section">
+            <div class="progress-label-row">
+            <label class="section-label">Form Completion</label>
+            <span class="progress-percent">
+                {{ registerForm.valid ? '100' : '40' }}%
+            </span>
+            </div>
+            <mat-progress-bar
+            mode="determinate"
+            [value]="registerForm.valid ? 100 : 40"
+            style="border-radius: 50px; height: 8px;">
+            </mat-progress-bar>
+        </div>
+
+        <mat-divider class="styled-divider"></mat-divider>
+
+        <!-- Terms Checkbox -->
+        <div class="terms-container">
+            <mat-checkbox
+            formControlName="agreeTerms"
+            matTooltip="You must agree to continue"
+            style="color: #555;">
+            I agree to the <strong style="color: #667eea;">Terms and Conditions</strong>
+            </mat-checkbox>
+            @if (registerForm.get('agreeTerms')?.invalid && submitted) {
+            <div>
+                <span class="error-text">You must agree to the terms to continue</span>
+            </div>
+            }
+        </div>
+
+        <!-- Submit Button -->
+        <button
+            mat-raised-button
+            type="submit"
+            matTooltip="Click to create your account"
+            class="submit-btn">
+            <mat-icon style="margin-right: 8px;">rocket_launch</mat-icon>
+            Create Account
+        </button>
+
+        </form>
+    </div>
+
+    </mat-card>
