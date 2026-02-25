@@ -1,0 +1,77 @@
+    <mat-toolbar color="primary" class="nav-toolbar">
+    <mat-icon style="margin-right: 10px;">rocket_launch</mat-icon>
+    <span>Innovator Portal</span>
+    <span style="flex: 1;"></span>
+    <mat-slide-toggle color="warn" (change)="toggleTheme()">
+        {{ isDarkMode ? 'Light' : 'Dark' }} Mode
+    </mat-slide-toggle>
+    </mat-toolbar>
+
+    <mat-card class="register-card">
+    <div class="card-header-banner">
+        <div class="header-icon-circle"><mat-icon>workspace_premium</mat-icon></div>
+        <h2>Membership Portal</h2>
+        <p>Join the next generation of innovators</p>
+    </div>
+
+    <div class="form-content">
+        <form [formGroup]="registerForm" (ngSubmit)="onClickSubmit()">
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Innovator Handle</mat-label>
+            <input matInput formControlName="username" placeholder="Required">
+            <mat-icon matSuffix>account_circle</mat-icon>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password">
+            <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" type="button">
+            <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-hint>Must start with a letter (A-Z)</mat-hint>
+            <mat-error *ngIf="registerForm.get('password')?.hasError('pattern')">
+            Password must start with a letter.
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Birth Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="birthDate" [max]="maxDate">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <div class="form-section">
+            <label class="section-label">Identity</label>
+            <mat-radio-group formControlName="gender" class="radio-group">
+            <mat-radio-button value="male">Male</mat-radio-button>
+            <mat-radio-button value="female">Female</mat-radio-button>
+            <mat-radio-button value="other">Other</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+        <div class="form-section">
+            <div class="progress-label-row">
+            <label class="section-label">Innovation Level</label>
+            <span class="progress-percent">{{ registerForm.get('innovatorLevel')?.value }} / 10</span>
+            </div>
+            <mat-slider min="1" max="10" step="1" class="full-width">
+            <input matSliderThumb formControlName="innovatorLevel">
+            </mat-slider>
+        </div>
+
+        <mat-divider class="styled-divider"></mat-divider>
+
+        <div class="terms-container">
+            <mat-checkbox formControlName="agreeTerms">I accept the Code of Conduct</mat-checkbox>
+        </div>
+
+        <button mat-raised-button type="submit" class="submit-btn full-width">
+            <mat-icon style="margin-right: 8px;">verified</mat-icon>
+            INITIALIZE MEMBERSHIP
+        </button>
+
+        </form>
+    </div>
+    </mat-card>

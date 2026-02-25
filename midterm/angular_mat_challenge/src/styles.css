@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f64f59 100%);
+    background-attachment: fixed;
+    transition: background 0.4s ease;
+}
+
+/* --- DARK MAROON THEME OVERRIDES --- */
+body.dark-theme {
+    background: #1a0000 !important; /* Full Browser Background */
+}
+
+body.dark-theme .register-card {
+    background-color: #4a0404 !important; /* Dark Maroon Card */
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Maroon Header and Button */
+body.dark-theme .card-header-banner,
+body.dark-theme .submit-btn {
+    background: linear-gradient(135deg, #2b0202, #630a0a) !important;
+    color: #ffffff !important;
+}
+
+/* Font Visibility Fixes */
+body.dark-theme mat-label,
+body.dark-theme .section-label,
+body.dark-theme .mat-mdc-checkbox label,
+body.dark-theme .progress-percent,
+body.dark-theme .mdc-label,
+body.dark-theme .mat-mdc-form-field-hint,
+body.dark-theme .card-header-banner p {
+    color: #ffcccc !important; /* Soft light pink/white */
+}
+
+body.dark-theme input.mat-mdc-input-element {
+    color: #ffffff !important;
+}
+
+body.dark-theme .gender-option {
+    border-color: #630a0a !important;
+    color: #ffcccc !important;
+}
