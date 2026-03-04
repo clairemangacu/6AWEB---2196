@@ -1,0 +1,111 @@
+<div class="container mt-5">
+  <div class="text-center mb-4">
+    <h1 class="fw-bold text-primary">📚 Books CRUD App</h1>
+    <p class="text-muted">Manage your book collection</p>
+  </div>
+
+  <!-- Add Book Form -->
+  <div class="card shadow p-4 mb-4">
+    <h4 class="mb-3 fw-semibold">➕ Add New Book</h4>
+    <div class="row g-2">
+      <div class="col-md-6">
+        <input class="form-control" placeholder="Title" [(ngModel)]="newBook.title">
+      </div>
+      <div class="col-md-6">
+        <input class="form-control" placeholder="Author" [(ngModel)]="newBook.author">
+      </div>
+      <div class="col-md-4">
+        <input class="form-control" placeholder="Year" type="number" [(ngModel)]="newBook.year">
+      </div>
+      <div class="col-md-4">
+        <input class="form-control" placeholder="Genre" [(ngModel)]="newBook.genre">
+      </div>
+      <div class="col-md-4">
+        <input class="form-control" placeholder="Description" [(ngModel)]="newBook.desc">
+      </div>
+      <div class="col-md-6">
+        <input class="form-control" placeholder="Publisher" [(ngModel)]="newBook.publisher">
+      </div>
+      <div class="col-md-6">
+        <input class="form-control" placeholder="Pages" type="number" [(ngModel)]="newBook.pages">
+      </div>
+      <div class="col-12">
+        <button class="btn btn-primary w-100 mt-2" (click)="addBook()">Add Book</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Book Form -->
+  <div class="card shadow p-4 mb-4 border-warning" *ngIf="editingBook">
+    <h4 class="mb-3 fw-semibold text-warning">✏️ Edit Book</h4>
+    <div class="row g-2">
+      <div class="col-md-6">
+        <input class="form-control" placeholder="Title" [(ngModel)]="editingBook.title">
+      </div>
+      <div class="col-md-6">
+        <input class="form-control" placeholder="Author" [(ngModel)]="editingBook.author">
+      </div>
+      <div class="col-md-4">
+        <input class="form-control" placeholder="Year" type="number" [(ngModel)]="editingBook.year">
+      </div>
+      <div class="col-md-4">
+        <input class="form-control" placeholder="Genre" [(ngModel)]="editingBook.genre">
+      </div>
+      <div class="col-md-4">
+        <input class="form-control" placeholder="Description" [(ngModel)]="editingBook.desc">
+      </div>
+      <div class="col-md-6">
+        <input class="form-control" placeholder="Publisher" [(ngModel)]="editingBook.publisher">
+      </div>
+      <div class="col-md-6">
+        <input class="form-control" placeholder="Pages" type="number" [(ngModel)]="editingBook.pages">
+      </div>
+      <div class="col-6">
+        <button class="btn btn-warning w-100 mt-2" (click)="updateBook()">✏️ Update Book</button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-secondary w-100 mt-2" (click)="editingBook = null">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Book List Table -->
+  <div class="card shadow">
+    <div class="card-header bg-dark text-white">
+      <h5 class="mb-0">📖 Book List</h5>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-hover table-striped mb-0">
+        <thead class="table-dark">
+          <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Year</th>
+            <th>Genre</th>
+            <th>Description</th>
+            <th>Publisher</th>
+            <th>Pages</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of books">
+            <td>{{book.id}}</td>
+            <td><strong>{{book.title}}</strong></td>
+            <td>{{book.author}}</td>
+            <td>{{book.year}}</td>
+            <td><span class="badge bg-info text-dark">{{book.genre}}</span></td>
+            <td>{{book.desc}}</td>
+            <td>{{book.publisher}}</td>
+            <td>{{book.pages}}</td>
+            <td>
+              <button class="btn btn-warning btn-sm me-1" (click)="editBook(book)">✏️ Edit</button>
+              <button class="btn btn-danger btn-sm" (click)="deleteBook(book.id)">🗑 Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
